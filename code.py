@@ -5,6 +5,10 @@ import network
 import socket
 import json
 
+# Pico W üzerindeki dahili LED GPIO 0 pinine bağlı
+led = Pin("LED", Pin.OUT)
+led.on()  # LED'i yak
+
 # DHT22 sensörü GPIO 2 pinine bağlayın
 sensor = dht.DHT22(Pin(2))
 
@@ -129,4 +133,3 @@ while True:
         cl.send(response)
     
     cl.close()
-
